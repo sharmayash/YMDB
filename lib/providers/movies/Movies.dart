@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:convert' as convert;
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import './Movie.dart';
 
@@ -41,7 +41,7 @@ class Movies with ChangeNotifier {
                 title: item['title'],
                 backdropPath:
                     "https://image.tmdb.org/t/p/w500/${item['backdrop_path']}",
-                popularity: item['popularity'],
+                popularity: item['popularity'].toDouble(),
                 voteCount: item['vote_count'],
                 video: item['video'],
                 voteAverage: item['vote_average'].toDouble()))
@@ -77,7 +77,7 @@ class Movies with ChangeNotifier {
                 title: item['title'],
                 backdropPath:
                     "https://image.tmdb.org/t/p/w500/${item['backdrop_path']}",
-                popularity: item['popularity'],
+                popularity: item['popularity'].toDouble(),
                 voteCount: item['vote_count'],
                 video: item['video'],
                 voteAverage: item['vote_average'].toDouble()))
@@ -113,7 +113,7 @@ class Movies with ChangeNotifier {
                 title: item['title'],
                 backdropPath:
                     "https://image.tmdb.org/t/p/w500/${item['backdrop_path']}",
-                popularity: item['popularity'],
+                popularity: item['popularity'].toDouble(),
                 voteCount: item['vote_count'],
                 video: item['video'],
                 voteAverage: item['vote_average'].toDouble()))

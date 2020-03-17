@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
               icon: Icon(Icons.search),
               onPressed: () {
-                Navigator.of(context).pushNamed(SearchScreen.routeName);
+                showSearch(context: context, delegate: SearchScreen());
               })
         ],
       ),

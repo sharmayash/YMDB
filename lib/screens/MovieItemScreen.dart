@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/OurLoader.dart';
 import '../providers/movies/Movies.dart';
 
 class MovieItemScreen extends StatelessWidget {
@@ -19,10 +20,10 @@ class MovieItemScreen extends StatelessWidget {
         builder: (context, AsyncSnapshot<Map> snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:
-              return Text('Loading....');
+              return OurLoader("Loading");
             default:
               if (snapshot.hasError)
-                return Text('Error: ${snapshot.error}');
+                return OurLoader("Something Went Wrong !!!");
               else
                 return Scaffold(
                   appBar: AppBar(
