@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ymdb/widgets/OurLoader.dart';
 
+import '../widgets/OurLoader.dart';
+import '../screens/MovieItemScreen.dart';
 import '../providers/search/MultiSearch.dart';
 
 class SearchScreen extends SearchDelegate {
@@ -68,18 +69,33 @@ class SearchScreen extends SearchDelegate {
                   itemCount: results.length,
                   itemBuilder: (context, index) {
                     var result = results[index];
-                    if (result['media_type'] == "movie") {
-                      return ListTile(
-                        title: Text("${result['title']} (Movie)"),
-                      );
-                    } else if (result['media_type'] == "tv") {
-                      return ListTile(
-                        title: Text("${result['name']} (TV)"),
-                      );
-                    } else if (result['media_type'] == "person") {
-                      return ListTile(
-                        title: Text("${result['name']} (Person)"),
-                      );
+                    switch (result['media_type']) {
+                      case "movie":
+                        return ListTile(
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 10),
+                          title: Text(
+                            "${result['title']} (Movie)",
+                            softWrap: true,
+                          ),
+                          leading: Image.network(
+                            'https://image.tmdb.org/t/p/w500${result['poster_path']}',
+                            fit: BoxFit.cover,
+                          ),
+                          onTap: () {
+                            Navigator.of(context).pushNamed(
+                                MovieItemScreen.routeName,
+                                arguments: result['id']);
+                          },
+                        );
+                      case "tv":
+                        return ListTile(
+                          title: Text("${result['name']} (TV)"),
+                        );
+                      default:
+                        return ListTile(
+                          title: Text("${result['name']} (Person)"),
+                        );
                     }
                   });
             }

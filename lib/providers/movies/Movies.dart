@@ -30,7 +30,7 @@ class Movies with ChangeNotifier {
       jsonResponse['results'].forEach((item) => {
             _popularMoviesList.add(Movie(
                 posterPath:
-                    "https://image.tmdb.org/t/p/w500/${item['poster_path']}",
+                    "https://image.tmdb.org/t/p/w500${item['poster_path']}",
                 adult: item['adult'],
                 overview: item['overview'],
                 releaseDate: item['release_date'],
@@ -40,7 +40,7 @@ class Movies with ChangeNotifier {
                 originalLanguage: item['original_language'],
                 title: item['title'],
                 backdropPath:
-                    "https://image.tmdb.org/t/p/w500/${item['backdrop_path']}",
+                    "https://image.tmdb.org/t/p/w500${item['backdrop_path']}",
                 popularity: item['popularity'].toDouble(),
                 voteCount: item['vote_count'],
                 video: item['video'],
@@ -66,7 +66,7 @@ class Movies with ChangeNotifier {
       jsonResponse['results'].forEach((item) => {
             _topRatedMoviesList.add(Movie(
                 posterPath:
-                    "https://image.tmdb.org/t/p/w500/${item['poster_path']}",
+                    "https://image.tmdb.org/t/p/w500${item['poster_path']}",
                 adult: item['adult'],
                 overview: item['overview'],
                 releaseDate: item['release_date'],
@@ -76,7 +76,7 @@ class Movies with ChangeNotifier {
                 originalLanguage: item['original_language'],
                 title: item['title'],
                 backdropPath:
-                    "https://image.tmdb.org/t/p/w500/${item['backdrop_path']}",
+                    "https://image.tmdb.org/t/p/w500${item['backdrop_path']}",
                 popularity: item['popularity'].toDouble(),
                 voteCount: item['vote_count'],
                 video: item['video'],
@@ -102,7 +102,7 @@ class Movies with ChangeNotifier {
       jsonResponse['results'].forEach((item) => {
             _nowPlayingMoviesList.add(Movie(
                 posterPath:
-                    "https://image.tmdb.org/t/p/w500/${item['poster_path']}",
+                    "https://image.tmdb.org/t/p/w500${item['poster_path']}",
                 adult: item['adult'],
                 overview: item['overview'],
                 releaseDate: item['release_date'],
@@ -112,7 +112,7 @@ class Movies with ChangeNotifier {
                 originalLanguage: item['original_language'],
                 title: item['title'],
                 backdropPath:
-                    "https://image.tmdb.org/t/p/w500/${item['backdrop_path']}",
+                    "https://image.tmdb.org/t/p/w500${item['backdrop_path']}",
                 popularity: item['popularity'].toDouble(),
                 voteCount: item['vote_count'],
                 video: item['video'],
@@ -138,7 +138,7 @@ class Movies with ChangeNotifier {
       jsonResponse['results'].forEach((item) => {
             _upcomingMoviesList.add(Movie(
                 posterPath:
-                    "https://image.tmdb.org/t/p/w500/${item['poster_path']}",
+                    "https://image.tmdb.org/t/p/w500${item['poster_path']}",
                 adult: item['adult'],
                 overview: item['overview'],
                 releaseDate: item['release_date'],
@@ -148,7 +148,7 @@ class Movies with ChangeNotifier {
                 originalLanguage: item['original_language'],
                 title: item['title'],
                 backdropPath:
-                    "https://image.tmdb.org/t/p/w500/${item['backdrop_path']}",
+                    "https://image.tmdb.org/t/p/w500${item['backdrop_path']}",
                 popularity: item['popularity'],
                 voteCount: item['vote_count'],
                 video: item['video'],
