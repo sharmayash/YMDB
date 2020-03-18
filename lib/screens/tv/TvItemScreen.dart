@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/OurLoader.dart';
-import '../providers/movies/Movies.dart';
+import '../../widgets/OurLoader.dart';
+import '../../providers/tv/Tvs.dart';
 
-class MovieItemScreen extends StatelessWidget {
+class TvItemScreen extends StatelessWidget {
   static const routeName = '/movie-detail';
 
   @override
   Widget build(BuildContext context) {
-    final movieId = ModalRoute.of(context).settings.arguments as int;
-    final movieFound = Provider.of<Movies>(
+    final showId = ModalRoute.of(context).settings.arguments as int;
+    final showFound = Provider.of<TVS>(
       context,
       listen: false,
-    ).findById(movieId);
+    ).findById(showId);
 
     return FutureBuilder(
-        future: movieFound,
+        future: showFound,
         builder: (context, AsyncSnapshot<Map> snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:
@@ -28,7 +28,7 @@ class MovieItemScreen extends StatelessWidget {
                 return Scaffold(
                   appBar: AppBar(
                       title: Text(
-                    '${snapshot.data['title']}',
+                    '${snapshot.data['name']}',
                     softWrap: true,
                   )),
                   body: SingleChildScrollView(

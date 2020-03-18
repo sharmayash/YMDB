@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import './HomeGrid.dart';
-import './SearchScreen.dart';
+import '../SearchScreen.dart';
 
-import '../providers/movies/Movies.dart';
+import '../../widgets/MyDrawer.dart';
+import '../../providers/movies/Movies.dart';
 
 class HomePage extends StatefulWidget {
+  static const routeName = "/movies";
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -24,6 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MyDrawer(),
       appBar: AppBar(
         title: Text(
           "YMDB",

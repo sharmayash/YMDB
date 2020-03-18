@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/movies/Movie.dart';
-import '../screens/movies/MovieItemScreen.dart';
+import '../providers/tv/TV.dart';
+import '../screens/tv/TvItemScreen.dart';
 
-class MovieItem extends StatelessWidget {
+class TvItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<Movie>(
-      builder: (context, movie, child) {
+    return Consumer<TV>(
+      builder: (context, tvShow, child) {
         return ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: GridTile(
             child: GestureDetector(
               onTap: () {
                 Navigator.of(context)
-                    .pushNamed(MovieItemScreen.routeName, arguments: movie.id);
+                    .pushNamed(TvItemScreen.routeName, arguments: tvShow.id);
               },
               child: Image.network(
-                movie.posterPath,
+                tvShow.posterPath,
                 fit: BoxFit.cover,
               ),
             ),
             footer: GridTileBar(
               backgroundColor: Colors.black38,
               title: Text(
-                movie.title,
+                tvShow.name,
                 textAlign: TextAlign.center,
               ),
             ),

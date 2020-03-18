@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/movies/Movies.dart';
-import '../widgets/MovieItem.dart';
+import '../../widgets/MovieItem.dart';
+import '../../providers/movies/Movies.dart';
 
 class HomeGrid extends StatelessWidget {
   @override
