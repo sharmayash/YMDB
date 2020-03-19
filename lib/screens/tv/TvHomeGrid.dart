@@ -10,7 +10,6 @@ class TvHomeGrid extends StatelessWidget {
     final popularShows = Provider.of<TVS>(context, listen: false).popularShows;
     final topRatedShows =
         Provider.of<TVS>(context, listen: false).topRatedShows;
-    // print(topRatedShows);
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

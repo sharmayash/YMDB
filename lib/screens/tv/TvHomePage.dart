@@ -15,10 +15,10 @@ class TvHomePage extends StatefulWidget {
 
 class _TvHomePageState extends State<TvHomePage> {
   @override
-  void initState() {
-    super.initState();
-    Provider.of<TVS>(context, listen: false).loadPopularShows();
-    Provider.of<TVS>(context, listen: false).loadTopRatedShows();
+  void didChangeDependencies() {
+    Provider.of<TVS>(context).loadPopularShows();
+    Provider.of<TVS>(context).loadTopRatedShows();
+    super.didChangeDependencies();
   }
 
   @override

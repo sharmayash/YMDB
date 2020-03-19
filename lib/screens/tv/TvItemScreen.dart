@@ -5,7 +5,7 @@ import '../../widgets/OurLoader.dart';
 import '../../providers/tv/Tvs.dart';
 
 class TvItemScreen extends StatelessWidget {
-  static const routeName = '/movie-detail';
+  static const routeName = '/tv-detail';
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class TvItemScreen extends StatelessWidget {
     final showFound = Provider.of<TVS>(
       context,
       listen: false,
-    ).findById(showId);
+    ).findShowById(showId);
 
     return FutureBuilder(
         future: showFound,

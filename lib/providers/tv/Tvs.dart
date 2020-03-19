@@ -78,7 +78,6 @@ class TVS with ChangeNotifier {
           });
 
       _topRatedPage++;
-      print(_topRatedShows);
       notifyListeners();
     } else {
       print('Request failed with status: ${response.statusCode}.');
@@ -90,16 +89,14 @@ class TVS with ChangeNotifier {
   }
 
   List<TV> get topRatedShows {
-    // print(_topRatedShows);
     return [..._topRatedShows];
   }
 
-  Future<Map> findById(int id) async {
+  Future<Map> findShowById(int id) async {
     var url =
         "https://api.themoviedb.org/3/tv/$id?api_key=$_apiKey&language=en-US";
 
     var response = await http.get(url);
-    print(response);
     Map showFound;
 
     if (response.statusCode == 200) {
