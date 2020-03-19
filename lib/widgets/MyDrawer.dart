@@ -39,9 +39,6 @@ class MyDrawer extends StatelessWidget {
           buildListTile("Tv Shows", () {
             Navigator.of(context).pushReplacementNamed('/tv-shows');
           }),
-          buildListTile("Persons", () {
-            Navigator.of(context).pushReplacementNamed('/persons');
-          }),
         ],
       ),
     );

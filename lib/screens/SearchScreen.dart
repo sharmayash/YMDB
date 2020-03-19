@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/OurLoader.dart';
+import '../screens/PersonScreen.dart';
+import '../screens/tv/TvItemScreen.dart';
 import '../providers/search/MultiSearch.dart';
 import '../screens/movies/MovieItemScreen.dart';
 
@@ -90,11 +92,39 @@ class SearchScreen extends SearchDelegate {
                         );
                       case "tv":
                         return ListTile(
-                          title: Text("${result['name']} (TV)"),
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 10),
+                          title: Text(
+                            "${result['name']} (TV)",
+                            softWrap: true,
+                          ),
+                          leading: Image.network(
+                            'https://image.tmdb.org/t/p/w500${result['poster_path']}',
+                            fit: BoxFit.cover,
+                          ),
+                          onTap: () {
+                            Navigator.of(context).pushNamed(
+                                TvItemScreen.routeName,
+                                arguments: result['id']);
+                          },
                         );
                       default:
                         return ListTile(
-                          title: Text("${result['name']} (Person)"),
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 10),
+                          title: Text(
+                            "${result['name']} (Person)",
+                            softWrap: true,
+                          ),
+                          leading: Image.network(
+                            'https://image.tmdb.org/t/p/w500${result['profile_path']}',
+                            fit: BoxFit.cover,
+                          ),
+                          onTap: () {
+                            Navigator.of(context).pushNamed(
+                                PersonScreen.routeName,
+                                arguments: result['id']);
+                          },
                         );
                     }
                   });

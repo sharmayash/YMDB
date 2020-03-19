@@ -4,8 +4,10 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import './providers/tv/Tvs.dart';
 import './providers/movies/Movies.dart';
+import './providers/person/Persons.dart';
 import './providers/search/MultiSearch.dart';
 
+import './screens/PersonScreen.dart';
 import './screens/tv/TvHomePage.dart';
 import './screens/tv/TvItemScreen.dart';
 import './screens/movies/HomePage.dart';
@@ -21,8 +23,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (_) => Movies()),
           ChangeNotifierProvider(create: (_) => TVS()),
+          ChangeNotifierProvider(create: (_) => Movies()),
+          ChangeNotifierProvider(create: (_) => Persons()),
           ChangeNotifierProvider(create: (_) => MultiSearch()),
         ],
         child: MaterialApp(
@@ -32,9 +35,10 @@ class MyApp extends StatelessWidget {
           initialRoute: '/movies',
           routes: {
             HomePage.routeName: (ctx) => HomePage(),
-            MovieItemScreen.routeName: (ctx) => MovieItemScreen(),
             TvHomePage.routeName: (ctx) => TvHomePage(),
             TvItemScreen.routeName: (ctx) => TvItemScreen(),
+            PersonScreen.routeName: (ctx) => PersonScreen(),
+            MovieItemScreen.routeName: (ctx) => MovieItemScreen(),
           },
         ));
   }
