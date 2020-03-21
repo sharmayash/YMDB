@@ -1,7 +1,8 @@
 # ymdb
 
-YMDB project.
+YMDB
 
 ## Getting Started
 
-This project is currently in Progress ...
+A mobile application in which user can search for movies, Tv Shows and People.
+This application is built using Flutter and its provider architecture.
