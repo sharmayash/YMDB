@@ -18,6 +18,7 @@ class MyDrawer extends StatelessWidget {
         children: <Widget>[
           Container(
             height: 120,
+            color: Theme.of(context).primaryColor,
             width: double.infinity,
             padding: EdgeInsets.all(20),
             alignment: Alignment.center,

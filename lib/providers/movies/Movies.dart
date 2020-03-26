@@ -192,7 +192,9 @@ class Movies with ChangeNotifier {
         'id': id,
         'title': jsonResponse['title'],
         'overview': jsonResponse['overview'],
-        'image': jsonResponse['backdrop_path']
+        'image': jsonResponse['backdrop_path'],
+        'rating': jsonResponse['vote_average'],
+        'date': jsonResponse['release_date'],
       };
 
       notifyListeners();

@@ -106,7 +106,9 @@ class TVS with ChangeNotifier {
         'id': id,
         'name': jsonResponse['name'],
         'overview': jsonResponse['overview'],
-        'image': jsonResponse['backdrop_path']
+        'image': jsonResponse['backdrop_path'],
+        'rating': jsonResponse['vote_average'],
+        'seasons': jsonResponse['number_of_seasons'],
       };
 
       notifyListeners();

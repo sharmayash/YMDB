@@ -20,22 +20,16 @@ class HomeGrid extends StatelessWidget {
             child: Text(
               "Movies",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 24,
-              ),
+              style: Theme.of(context).textTheme.headline4,
             ),
           ),
           Container(
             margin: EdgeInsets.fromLTRB(40, 10, 40, 0),
             padding: EdgeInsets.fromLTRB(20, 6, 20, 6),
-            color: Colors.black45,
-            child: Text(
-              "Popular",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-              ),
-            ),
+            color: Theme.of(context).accentColor,
+            child: Text("Popular",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline5),
           ),
           Container(
             height: 200.0,
@@ -58,14 +52,10 @@ class HomeGrid extends StatelessWidget {
           Container(
             margin: EdgeInsets.fromLTRB(40, 10, 40, 0),
             padding: EdgeInsets.fromLTRB(20, 6, 20, 6),
-            color: Colors.black45,
-            child: Text(
-              "Top Rated",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-              ),
-            ),
+            color: Theme.of(context).accentColor,
+            child: Text("Top Rated",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline5),
           ),
           Container(
             height: 200.0,
@@ -88,14 +78,10 @@ class HomeGrid extends StatelessWidget {
           Container(
             margin: EdgeInsets.fromLTRB(40, 10, 40, 0),
             padding: EdgeInsets.fromLTRB(20, 6, 20, 6),
-            color: Colors.black45,
-            child: Text(
-              "Upcoming",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-              ),
-            ),
+            color: Theme.of(context).accentColor,
+            child: Text("Upcoming",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline5),
           ),
           Container(
             height: 200.0,
@@ -118,14 +104,10 @@ class HomeGrid extends StatelessWidget {
           Container(
             margin: EdgeInsets.fromLTRB(40, 10, 40, 0),
             padding: EdgeInsets.fromLTRB(20, 6, 20, 6),
-            color: Colors.black45,
-            child: Text(
-              "Movies In Indian Cinemas",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-              ),
-            ),
+            color: Theme.of(context).accentColor,
+            child: Text("Movies In Indian Cinemas",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline5),
           ),
           Container(
             height: 200.0,

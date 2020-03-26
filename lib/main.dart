@@ -30,7 +30,22 @@ class MyApp extends StatelessWidget {
         ],
         child: MaterialApp(
           title: 'YMDB',
-          theme: new ThemeData.dark(),
+          theme: ThemeData(
+              primarySwatch: Colors.lightGreen,
+              accentColor: Colors.grey[350],
+              fontFamily: 'BalooBhai',
+              textTheme: TextTheme(
+                headline4: TextStyle(
+                    fontFamily: 'DancingScript',
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2),
+                headline5: TextStyle(
+                    fontSize: 20,
+                    fontFamily: 'BalooBhai',
+                    fontWeight: FontWeight.w100,
+                    fontStyle: FontStyle.normal,
+                    letterSpacing: 2),
+              )),
           debugShowCheckedModeBanner: false,
           initialRoute: '/movies',
           routes: {

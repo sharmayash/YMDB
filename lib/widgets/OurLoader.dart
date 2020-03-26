@@ -9,19 +9,19 @@ class OurLoader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black12,
+        backgroundColor: Colors.lightGreen[100],
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SpinKitPouringHourglass(
-              color: Colors.blue[100],
+              color: Colors.black,
               size: 50.0,
             ),
             Container(
                 margin: EdgeInsets.symmetric(vertical: 30),
                 child: Text(
                   this.message,
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20, color: Colors.black),
                 )),
           ],
         ));

@@ -1,6 +1,6 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../widgets/OurLoader.dart';
 import '../../providers/movies/Movies.dart';
 
@@ -34,29 +34,63 @@ class MovieItemScreen extends StatelessWidget {
                   body: SingleChildScrollView(
                     child: Column(children: [
                       Container(
-                        height: 300,
+                        height: 250,
                         width: double.infinity,
-                        child: Image.network(
-                          'https://image.tmdb.org/t/p/w500/${snapshot.data['image']}',
-                          fit: BoxFit.cover,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(
+                                'https://image.tmdb.org/t/p/w500${snapshot.data['image']}'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        child: Container(
+                          alignment: Alignment.bottomCenter,
+                          child: ClipRRect(
+                            borderRadius:
+                                BorderRadius.vertical(top: Radius.circular(30)),
+                            child: Container(
+                              height: 80,
+                              color: Colors.black54,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                  Text(
+                                    "Release Date:- ${snapshot.data['date']}",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontFamily: 'DancingScript',
+                                        color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    width: 1,
+                                    child: Container(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Rating:- ${snapshot.data['rating']}",
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontFamily: 'DancingScript',
+                                        color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Container(
-                          padding: EdgeInsets.all(30),
-                          width: double.infinity,
-                          color: Colors.black12,
-                          child: Text(
-                            '${snapshot.data['overview']}',
-                            style: TextStyle(),
-                            textScaleFactor: 1.5,
-                            textAlign: TextAlign.left,
-                            softWrap: true,
-                          ),
+                      Container(
+                        padding: EdgeInsets.all(30),
+                        width: double.infinity,
+                        color: Colors.black12,
+                        child: Text(
+                          '${snapshot.data['overview']}',
+                          textScaleFactor: 1.2,
+                          maxLines: 4,
+                          textAlign: TextAlign.left,
+                          softWrap: true,
                         ),
                       )
                     ]),
