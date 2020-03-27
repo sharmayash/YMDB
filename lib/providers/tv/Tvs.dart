@@ -42,7 +42,7 @@ class TVS with ChangeNotifier {
                 voteAverage: item['vote_average'].toDouble()))
           });
 
-      // _popularPage++;
+      _popularPage++;
       notifyListeners();
     } else {
       print('Request failed with status: ${response.statusCode}.');
@@ -77,7 +77,7 @@ class TVS with ChangeNotifier {
                 voteAverage: item['vote_average'].toDouble()))
           });
 
-      // _topRatedPage++;
+      _topRatedPage++;
       notifyListeners();
     } else {
       print('Request failed with status: ${response.statusCode}.');
