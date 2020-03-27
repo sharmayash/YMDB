@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../widgets/OurLoader.dart';
 import '../../providers/tv/Tvs.dart';
+import '../../widgets/OurLoader.dart';
+import '../../widgets/DescriptionItem.dart';
 
 class TvItemScreen extends StatelessWidget {
   static const routeName = '/tv-detail';
@@ -82,19 +83,7 @@ class TvItemScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        padding: EdgeInsets.all(30),
-                        width: double.infinity,
-                        color: Colors.black12,
-                        child: Text(
-                          '${snapshot.data['overview']}',
-                          style: TextStyle(),
-                          maxLines: 4,
-                          textScaleFactor: 1.2,
-                          textAlign: TextAlign.left,
-                          softWrap: true,
-                        ),
-                      )
+                      DescriptionItem(snapshot.data['overview']),
                     ]),
                   ),
                 );

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/OurLoader.dart';
+import '../widgets/DescriptionItem.dart';
+
 import '../providers/person/Person.dart';
 import '../providers/person/Persons.dart';
 
@@ -42,24 +44,7 @@ class PersonScreen extends StatelessWidget {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Container(
-                          padding: EdgeInsets.all(30),
-                          width: double.infinity,
-                          color: Colors.black12,
-                          child: Text(
-                            '${snapshot.data.biography}',
-                            style: TextStyle(),
-                            textScaleFactor: 1.5,
-                            textAlign: TextAlign.left,
-                            softWrap: true,
-                          ),
-                        ),
-                      )
+                      DescriptionItem(snapshot.data.biography),
                     ]),
                   ),
                 );

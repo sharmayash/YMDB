@@ -1,7 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../widgets/OurLoader.dart';
+import '../../widgets/DescriptionItem.dart';
+
 import '../../providers/movies/Movies.dart';
 
 class MovieItemScreen extends StatelessWidget {
@@ -81,18 +84,7 @@ class MovieItemScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        padding: EdgeInsets.all(30),
-                        width: double.infinity,
-                        color: Colors.black12,
-                        child: Text(
-                          '${snapshot.data['overview']}',
-                          textScaleFactor: 1.2,
-                          maxLines: 4,
-                          textAlign: TextAlign.left,
-                          softWrap: true,
-                        ),
-                      )
+                      DescriptionItem(snapshot.data['overview']),
                     ]),
                   ),
                 );

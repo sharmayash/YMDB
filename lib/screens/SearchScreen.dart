@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../widgets/OurLoader.dart';
 import '../screens/PersonScreen.dart';
@@ -51,7 +52,11 @@ class SearchScreen extends SearchDelegate {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Center(child: CircularProgressIndicator()),
+                Center(
+                    child: SpinKitFadingCube(
+                  color: Colors.lightGreen,
+                  size: 45.0,
+                )),
               ],
             );
           } else if (snapshot.data.length == 0) {
